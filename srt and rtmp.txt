@@ -1,0 +1,11 @@
+ffmpeg -stream_loop -1 -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i "C:\Users\KiT\Videos\chainsawman_video.mp4" -c:a copy -c:v h264_nvenc -preset p4 -tune hq -b:v 5M -bufsize 5M -maxrate 10M -qmin 0 -g 250 -bf 3 -b_ref_mode middle -temporal-aq 1 -rc-lookahead 20 -i_qfactor 0.75 -b_qfactor 1.1 -flags +global_header -f tee -map 0:v -map 0:a \
+"[f=flv:onfail=ignore]rtmp://192.168.11.129:1935/stream/hello| \
+[f=flv:onfail=ignore]rtmp://ovsu.mycdn.me/input/170983061_170983061_43_7la26wpddq| \
+[f=flv:recover]rtmp://192.168.11.129:1935/stream/hello| \
+[f=flv:recover]rtmp://ovsu.mycdn.me/input/170983061_170983061_43_7la26wpddq" 
+
+
+ffmpeg -stream_loop -1 -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i "C:\Users\KiT\Videos\chainsawman_video.mp4" -c:a aac -c:v h264_nvenc -preset p4 -tune hq -b:v 5M -bufsize 5M -maxrate 10M -qmin 0 -g 250 -bf 3 -b_ref_mode middle -temporal-aq 1 -rc-lookahead 20 -i_qfactor 0.75 -b_qfactor 1.1 -flags +global_header -f tee -map 0:v -map 0:a "[f=flv:onfail=ignore]rtmp://ovsu.mycdn.me/input/170983061_170983061_43_7la26wpddq"  
+
+
+ffmpeg -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i C:\Users\KiT\Videos\chainsawman_video.mp4 -c:a copy -c:v h264_nvenc -preset p4 -tune hq -b:v 5M -bufsize 5M -maxrate 10M -qmin 0 -g 250 -bf 3 -b_ref_mode middle -temporal-aq 1 -rc-lookahead 20 -i_qfactor 0.75 -b_qfactor 1.1 output.mp4
