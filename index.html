@@ -16,22 +16,29 @@
         padding: 20px;
         background-color: #ffffff;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        justify-content: center;
       }
       h1 {
         color: #333333;
         text-align: center;
         margin-top: 0;
+        grid-column: 1 / -1;
       }
       p {
         font-size: 16px;
         line-height: 1.5;
         color: #666666;
+        grid-column: span 1;
+        text-align: center
       }
       .button {
-        
-        padding: 10px 20px;
         display: block;
         margin: 0 auto;
+        padding: 10px 20px;
         background-color: #008CBA;
         color: #ffffff;
         font-size: 16px;
@@ -40,6 +47,7 @@
         text-decoration: none;
         border-radius: 4px;
         transition: background-color 0.3s ease;
+        grid-column: 1 / -1;
       }
       .button:hover {
         background-color: #005F6B;
@@ -47,11 +55,14 @@
     </style>
   </head>
   <body>
+    
     <div class="container">
       <h1>Welcome to our VOD Portal</h1>
-      <p>We provide a vast collection of on-demand video content for your viewing pleasure. Browse our extensive library of movies, TV shows, documentaries, and more. Our platform offers high-quality streaming on any device, anytime, anywhere.</p>
-      <p>Get started now by clicking the button below:</p>
-      <a href="webvod.html" class="button">Browse Videos</a>
+      
+      <p>Для перехода к прямым трансляциям нажмите кнопку Live: <a href="weblive.html" class="button">Live</a> </p>
+      
+      <p>Для перехода к архиву видео нажмите кнопку Videos: <a href="webvod.html" class="button">Videos</a></p>
+      
     </div>
   </body>
 </html>
