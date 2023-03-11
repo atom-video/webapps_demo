@@ -1,1 +1,1 @@
-<><script src="https://vjs.zencdn.net/7.11.4/video.js"></script><script src="https://cdn.jsdelivr.net/npm/videojs-contrib-dash@2.13.0/dist/videojs-dash.min.js"></script></>
+<script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
