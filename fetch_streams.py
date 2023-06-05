@@ -11,7 +11,7 @@ def fetch_hls_urls():
     contents = req['contents']
 
     for link in contents:
-        link_list.append(link['download_url'])
+        link_list.append('https://' + link['download_url'])
 
     return link_list
 
