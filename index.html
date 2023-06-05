@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
-    <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+<style>
+.video-container {
+width: 100%;
+height: 0;
+padding-bottom: 56.25%; /* This sets the aspect ratio (16:9) */
+}
+
+</style>
   </head>
   <body>
     
     <div id="players-container"></div>
 
     <script src="videojs-hls-streams.js"></script>
-    <script>
-      fetch('fetch_streams.py')
-        .then(response => response.json())
-        .then(data => loadHlsStreams(data))
-        .catch(error => console.error('Error:', error));
-    </script>
+    
   </body>
 </html>

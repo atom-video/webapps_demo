@@ -6,7 +6,7 @@ function loadHlsStreams() {
   })
     .then(response => response.json())
     .then(data => {
-      const linkList = data.contents.map(link => link.download_url);
+      const linkList = data.contents.map(link => ('https://'+link.download_url));
       console.log(linkList);
       
       // Display the video players
@@ -23,7 +23,7 @@ function loadHlsStreams() {
           fluid: true,
           sources: [
             {
-              src: 'https://'+ link,
+              src: link,
               type: 'application/x-mpegURL'
             }
           ]
