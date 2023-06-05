@@ -1,0 +1,53 @@
+		body {
+			background-color: #F5F5F5;
+			font-family: Arial, sans-serif;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 36px;
+		}
+
+		h2 {
+			font-size: 24px;
+		}
+
+
+		.video-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: stretch;
+			gap: 20px;
+		}
+
+		.video {
+			width: 100%;
+			max-width: 600px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+			border-radius: 5px;
+			overflow: hidden;
+		}
+
+		@media screen and (min-width: 768px) {
+			.video {
+				width: 45%;
+			}
+		}
+
+		.video-js {
+			background-color: #000;
+		}
+
+		.video-js.vjs-default-skin .vjs-progress-holder {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+
+		.video-js.vjs-default-skin .vjs-load-progress {
+			background-color: rgba(255, 255, 255, 0.6);
+		}
+
+		.video-js.vjs-default-skin .vjs-slider-handle {
+			background-color: #fff;
+		}
