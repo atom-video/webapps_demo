@@ -1,4 +1,5 @@
 import requests
+import json
 
 def fetch_hls_urls():
     url = 'https://filespot.platformcraft.ru/2/fs/container/60b080470e47cf6763e5ae85/object/kit'  # Replace with your URL
@@ -15,6 +16,4 @@ def fetch_hls_urls():
 
     return link_list
 
-if __name__ == '__main__':
-    urls = fetch_hls_urls()
-    print(urls)
+print(json.dumps(link_list))
