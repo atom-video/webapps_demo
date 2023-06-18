@@ -89,6 +89,7 @@ function getAccessToken() {
   xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
   var body = 'login=greenatom&password=123123'; // replace with your own login and password
   xhr.send(body);
+  console.log("gettoken")
 }
 
 getAccessToken(); // fetch access token once on page load
