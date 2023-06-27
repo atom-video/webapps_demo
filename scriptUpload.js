@@ -55,6 +55,7 @@ function uploadFile() {
     name: `kit/${filename}`,
     presets: '5676a27cf9cb101634000002,5676a27cf9cb101634000003,5676a27cf9cb101634000004,5676a27cf9cb101634000006', //1080,720,480,360
     del_original: true,
+    autoplayer: true
   };
   formData.append('file', file);
   formData.append('data', JSON.stringify(data));
@@ -62,6 +63,7 @@ function uploadFile() {
   formData.append('autoencoding', data.autoencoding); // Add the autoencoding field to the FormData object
   formData.append('presets', data.presets); // Add the presets field to the FormData object
   formData.append('del_original', data.del_original); // Add autodeleting original video
+  formData.append('autoplayer', data.autoplayer); // Add the autoplayer field to the FormData object
 
   const request = new XMLHttpRequest();
   request.open('POST', url);
