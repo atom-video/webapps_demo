@@ -68,41 +68,14 @@
     }
   </style>
   <script src="scriptUpload.js"></script>
-  <script>
-    function handleUpload() {
-      const fileInput = document.getElementById('file-input');
-      const file = fileInput.files[0];
-      if (!file) {
-        alert('Please select a file to upload.');
-        return;
-      }
-
-      // Disable the upload button and display a message
-      const uploadButton = document.getElementById('upload-button');
-      const uploadMessage = document.getElementById('upload-message');
-      uploadButton.disabled = true;
-      uploadMessage.textContent = 'Uploading file...';
-
-      // Call the uploadFile function and handle the response
-      uploadFile().then(function() {
-        // Display a success message and re-enable the upload button
-        uploadMessage.textContent = 'File uploaded successfully!';
-        uploadButton.disabled = false;
-      }).catch(function(error) {
-        // Display an error message and re-enable the upload button
-        uploadMessage.textContent = `Error uploading file: ${error.message}`;
-        uploadButton.disabled = false;
-      });
-    }
-  </script>
 </head>
 <body>
   <div class="container">
     <h1>Upload File</h1>
     <label for="file-input">Select a file to upload:</label>
     <input type="file" id="file-input"><br>
-    <button id="upload-button" onclick="handleUpload()">Upload</button>
-    <span id="upload-message"></span>
+    <button id="upload-button">Upload File</button>
+    <div id="upload-message"></div>
   </div>
 </body>
 </html>
