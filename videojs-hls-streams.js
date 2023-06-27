@@ -37,7 +37,7 @@ function updateStreams() {
             const sourceElement = document.createElement('source');
             sourceElement.setAttribute('src', link);
             sourceElement.setAttribute('type', data.content_type);
-            console.log(link.content_type);
+            
             videoElement.appendChild(sourceElement);
             videoElements.push(videoElement); // add new element to array
             videoContainer.appendChild(videoElement);
