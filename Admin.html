@@ -1,17 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Upload Files to CDN</title>
+  <title>Upload File</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 32px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    input[type="file"] {
+      margin-bottom: 32px;
+      font-size: 16px;
+      padding: 16px;
+      border: none;
+      background-color: #f5f5f5;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 16px 32px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #0062cc;
+    }
+
+    #upload-message {
+      display: block;
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+  <script src="scriptUpload.js"></script>
+  <script>
+    function handleUpload() {
+      const fileInput = document.getElementById('file-input');
+      const file = fileInput.files[0];
+      if (!file) {
+        alert('Please select a file to upload.');
+        return;
+      }
+
+      // Disable the upload button and display a message
+      const uploadButton = document.getElementById('upload-button');
+      const uploadMessage = document.getElementById('upload-message');
+      uploadButton.disabled = true;
+      uploadMessage.textContent = 'Uploading file...';
+
+      // Call the uploadFile function and handle the response
+      uploadFile().then(function() {
+        // Display a success message and re-enable the upload button
+        uploadMessage.textContent = 'File uploaded successfully!';
+        uploadButton.disabled = false;
+      }).catch(function(error) {
+        // Display an error message and re-enable the upload button
+        uploadMessage.textContent = `Error uploading file: ${error.message}`;
+        uploadButton.disabled = false;
+      });
+    }
+  </script>
 </head>
 <body>
-  <h1>Upload Files to CDN</h1>
-  <form id="upload-form">
-    <label for="file-input">Select File:</label>
-    <input type="file" id="file-input" name="file" required>
-    <br><br>
-    <button type="submit">Upload File</button>
-  </form>
-  <p id="status"></p>
-  <script src="scriptAdmin.js"></script> 
+  <div class="container">
+    <h1>Upload File</h1>
+    <label for="file-input">Select a file to upload:</label>
+    <input type="file" id="file-input"><br>
+    <button id="upload-button" onclick="handleUpload()">Upload</button>
+    <span id="upload-message"></span>
+  </div>
 </body>
 </html>
