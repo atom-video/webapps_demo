@@ -87,7 +87,6 @@ function uploadFile() {
   };
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
   const fileInput = document.getElementById('file-input');
   const uploadButton = document.getElementById('upload-button');
